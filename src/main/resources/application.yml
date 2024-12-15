@@ -1,6 +1,14 @@
 spring:
   application:
     name: Ansible
-
 server:
   port: 8085
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,shutdown  # Expose les points de terminaison health et shutdown
+  endpoint:
+    shutdown:
+      access: unrestricted
+
